@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Bristol Air Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html"><i class="fa-solid fa-wind"></i> BRISTOL<span>AIR</span></a>
+                </div>
+                <div class="btn menu-btn" id="openMenu"><i class="fa-solid fa-bars"></i></div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="air-data.html">Air Data</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="swiper main-swiper">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide overlay">
+                    <img src="https://www.a-classcars.co.uk/wp-content/uploads/2024/04/city-of-bristol.jpeg" alt="Bristol Harbourside">
+                    <div class="img-overlay">
+                        <h2>Clean Air for a Greener Bristol</h2>
+                        <p class="lead">Monitoring urban air quality for a healthier community.</p>
+                        <a href="air-data.html" class="primary-btn">Explore Live Explorer</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide overlay">
+                    <img src="https://content.api.news/v3/images/bin/2aba07aaee984c910be7306347735d9c" alt="Bristol Skyline">
+                    <div class="img-overlay">
+                        <p class="badge">DATA INSIGHTS</p>
+                        <h2>Analyze City-Wide NO2 Trends</h2>
+                        <p class="lead">Visualizing official open data from across the city center.</p>
+                        <a href="air-data.html" class="primary-btn">View Map Data</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide overlay">
+                    <img src="https://images.contentstack.io/v3/assets/blt1bd0ccbd0b7d1870/blt83c0bf5e486fab6f/68a46ee72cb60c112278f391/bristol-clean-air-zone.jpg" alt="Bristol CAZ">
+                    <div class="img-overlay">
+                        <p class="badge">ENVIRONMENTAL POLICY</p>
+                        <h2>Impact of the Clean Air Zone</h2>
+                        <p class="lead">Understanding how policy changes affect the air we breathe.</p>
+                        <a href="about.html" class="primary-btn">Our Methodology</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next" style="color: #fff;"></div>
+            <div class="swiper-button-prev" style="color: #fff;"></div>
+        </div>
+    </main>
+
+    <section class="stats-bar">
+        <div class="container stats-grid">
+            <div class="stat-card">
+                <h3>100+</h3>
+                <p>Data Points</p>
+            </div>
+            <div class="stat-card">
+                <h3>2022-26</h3>
+                <p>Dataset Range</p>
+            </div>
+            <div class="stat-card">
+                <h3>100%</h3>
+                <p>Open Access</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="padding: 80px 0;">
+        <div class="features-wrapper">
+            <div class="feature-card">
+                <i class="fa-solid fa-microchip"></i>
+                <h3>Advanced Filtering</h3>
+                <p>Instantly sort through hundreds of records by health impact and location.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <h3>Interactive GIS</h3>
+                <p>Geospatial mapping of NO2 concentrations across the city center.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-shield-virus"></i>
+                <h3>Health Safety</h3>
+                <p>Guidelines based on official WHO air quality standards.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-section">
+        <div class="container reviews-flex">
+            <div class="reviews-text">
+                <h2 class="headings">Citizen <span>Feedback</span></h2>
+                <p>Real-time reactions to the Bristol Air Quality initiative.</p>
+                
+                <div style="margin-top: 30px; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2);">
+                    <h4 style="color: #fff; margin-bottom: 10px;">Write a Review</h4>
+                    <input type="text" id="revName" placeholder="Your Name" style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: none;">
+                    
+                    <select id="revStars" style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: none;">
+                        <option value="5">★★★★★ (5 Stars)</option>
+                        <option value="4">★★★★☆ (4 Stars)</option>
+                        <option value="3">★★★☆☆ (3 Stars)</option>
+                        <option value="2">★★☆☆☆ (2 Stars)</option>
+                        <option value="1">★☆☆☆☆ (1 Star)</option>
+                    </select>
+
+                    <textarea id="revText" placeholder="Your feedback..." style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: none; height: 60px;"></textarea>
+                    <button onclick="addNewReview()" class="primary-btn" style="width: 100%; padding: 10px; border: none; cursor: pointer;">Submit</button>
+                </div>
+            </div>
+
+            <div class="swiper reviews-swiper">
+                <div class="swiper-wrapper" id="reviewsContainer">
+                    <div class="swiper-slide review-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i> x 5</div>
+                        <p>"The best tool for checking my local air safety."</p>
+                        <strong>Sarah J.</strong>
+                    </div>
+                    <div class="swiper-slide review-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i> x 5</div>
+                        <p>"Incredibly fast data loading and clean UI."</p>
+                        <strong>Marcus T.</strong>
+                    </div>
+                    <div class="swiper-slide review-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i> x 4</div>
+                        <p>"Very useful for my Master's dissertation research."</p>
+                        <strong>Elena R.</strong>
+                    </div>
+                    <div class="swiper-slide review-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i> x 5</div>
+                        <p>"Love the modern floating design!"</p>
+                        <strong>Kevin L.</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="padding: 60px 0; text-align: center;">
+        <h3 style="color: #888; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px;">Built With Modern Tech</h3>
+        <div class="tech-stack">
+            <i class="fa-brands fa-html5"></i>
+            <i class="fa-brands fa-css3-alt"></i>
+            <i class="fa-brands fa-js"></i>
+            <i class="fa-solid fa-database"></i>
+        </div>
+    </section>
+
+    <footer class="footer-slim">
+        <div class="container footer-flex">
+            <div class="footer-logo">
+                <h3>BRISTOL<span>AIR</span></h3>
+            </div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="air-data.html">Air Data</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <div class="footer-copy">
+                <p>&copy; 2026 Bristol Air Quality Explorer</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

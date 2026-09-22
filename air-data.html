@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Explorer | Data Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        /* Dashboard Specific Tweaks */
+        .dashboard-card { background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        #map { height: 500px; border-radius: 12px; border: 1px solid #eee; z-index: 1; }
+        
+        /* Search & Location Button Styling */
+        .search-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .search-btn:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="sub-page">
+
+    <header class="static-header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html"><i class="fa-solid fa-wind"></i> BRISTOL<span>AIR</span></a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="air-data.html" class="active">Air Data</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-title">
+        <div class="container">
+            <h1>Pollution Data Explorer</h1>
+            <p>Interactive monitoring of NO2 concentrations across Bristol City Center.</p>
+        </div>
+    </section>
+
+    <section class="container" style="padding: 50px 0;">
+        <div class="dashboard-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 15px;">
+                <div>
+                    <h2 class="headings" style="font-size: 1.8rem; margin: 0;"><i class="fa-solid fa-map-location-dot"></i> Geospatial <span>Mapping</span></h2>
+                    <p>Click on the markers to see localized concentration levels.</p>
+                </div>
+                <button id="locateBtn" class="search-btn" style="background: #3498db;">
+                    <i class="fa-solid fa-location-crosshairs"></i> My Location
+                </button>
+            </div>
+            <div id="map"></div>
+        </div>
+
+        <div class="stats-grid" style="background: white; color: #333; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 40px;">
+            <div class="stat-card">
+                <span class="badge low">Low Risk</span>
+                <p>0 - 20 µg/m³</p>
+            </div>
+            <div class="stat-card">
+                <span class="badge moderate">Moderate</span>
+                <p>21 - 40 µg/m³</p>
+            </div>
+            <div class="stat-card">
+                <span class="badge high">High Risk</span>
+                <p>40+ µg/m³</p>
+            </div>
+        </div>
+
+        <div class="table-container" style="padding: 30px;">
+            <div class="filters">
+                <input type="text" id="searchInput" placeholder="Search by Street Name..." onkeyup="filterData()">
+                
+                <button class="search-btn" onclick="filterData()">
+                    <i class="fa-solid fa-magnifying-glass"></i> Search
+                </button>
+
+                <select id="yearFilter" onchange="filterData()">
+                    <option value="all">All Years</option>
+                    <option value="2026">2026</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                </select>
+                <select id="levelFilter" onchange="filterData()">
+                    <option value="all">All Levels</option>
+                    <option value="Low">Low</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Location</th>
+                        <th>Survey Year</th>
+                        <th>NO2 (µg/m³)</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer class="footer-slim">
+        <div class="container footer-flex">
+            <div class="footer-logo"><h3>BRISTOL<span>AIR</span></h3></div>
+            <p>&copy; 2026 Bristol Air Quality Project</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

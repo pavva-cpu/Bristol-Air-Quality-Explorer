@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Bristol Air Quality Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body class="sub-page">
+
+    <header class="static-header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html"><i class="fa-solid fa-wind"></i> BRISTOL<span>AIR</span></a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="air-data.html">Air Data</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-title">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Have questions about Bristol's air quality data? Reach out to our team.</p>
+        </div>
+    </section>
+
+    <section class="container" style="padding: 100px 0;">
+        <div class="about-grid">
+            
+            <div class="contact-details">
+                <span class="badge" style="background: var(--primary); color: white; margin-bottom: 15px;">GET IN TOUCH</span>
+                <h2 class="headings">How Can We <span>Help?</span></h2>
+                <p class="lead" style="margin-bottom: 40px;">Whether you are a researcher, a local resident, or a policy maker, we are happy to discuss our data findings and methodology.</p>
+                
+                <div class="feature-card" style="text-align: left; padding: 25px; margin-bottom: 20px; display: flex; align-items: center; gap: 20px;">
+                    <i class="fa-solid fa-envelope" style="font-size: 1.5rem; margin-bottom: 0;"></i>
+                    <div>
+                        <h4 style="color: var(--dark);">Email Support</h4>
+                        <p>info@bristolairdata.com</p>
+                    </div>
+                </div>
+
+                <div class="feature-card" style="text-align: left; padding: 25px; display: flex; align-items: center; gap: 20px;">
+                    <i class="fa-solid fa-location-dot" style="font-size: 1.5rem; margin-bottom: 0;"></i>
+                    <div>
+                        <h4 style="color: var(--dark);">Our Location</h4>
+                        <p>University of the West of England, Bristol</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-wrapper">
+                <div class="table-container" style="padding: 40px; margin-top: 0;">
+                    <form id="contactForm">
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 500;">Full Name</label>
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 500;">Email Address</label>
+                            <input type="email" id="email" placeholder="email@example.com" required>
+                        </div>
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 500;">Your Message</label>
+                            <textarea id="message" placeholder="How can we help you today?" required style="height: 150px; resize: none;"></textarea>
+                        </div>
+                        <button type="submit" class="primary-btn" style="width: 100%; border: none; cursor: pointer;">
+                            <i class="fa-solid fa-paper-plane" style="margin-right: 10px;"></i> Send Message
+                        </button>
+                    </form>
+
+                    <div id="statusMessage" style="display: none; margin-top: 25px; padding: 20px; border-radius: 10px; text-align: center; animation: slideUp 0.4s ease;">
+                        <i id="statusIcon" class="fa-solid" style="font-size: 2rem; margin-bottom: 10px; display: block;"></i>
+                        <h4 id="statusTitle"></h4>
+                        <p id="statusText"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer-slim">
+        <div class="container footer-flex">
+            <div class="footer-logo">
+                <h3>BRISTOL<span>AIR</span></h3>
+            </div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="air-data.html">Air Data</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <div class="footer-copy">
+                <p>&copy; 2026 Bristol Air Quality Explorer</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
