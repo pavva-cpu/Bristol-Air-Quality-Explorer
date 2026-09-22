@@ -1,0 +1,518 @@
+/* =========================================
+   1. CORE THEME & VARIABLES
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #2095ae;
+    --dark: #0a4f70;
+    --footer-bg: #1e293b;
+    --white: #ffffff;
+    --gray-bg: #f8fafc;
+    --accent-blue: #87e1f5;
+    --low-color: #27ae60;
+    --mod-color: #f39c12;
+    --high-color: #e74c3c;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body { 
+    color: #333; 
+    line-height: 1.6; 
+    background: #fdfdfd; 
+    overflow-x: hidden; 
+}
+
+.container { max-width: 1200px; margin: auto; padding: 0 20px; }
+
+/* =========================================
+   2. NAVIGATION & HEADER
+   ========================================= */
+header { 
+    background: rgba(255, 255, 255, 0.95); 
+    padding: 15px 0; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+}
+
+nav { display: flex; justify-content: space-between; align-items: center; }
+
+.logo a { color: var(--dark); text-decoration: none; font-size: 1.8rem; font-weight: 700; }
+.logo span { color: var(--primary); }
+
+.nav-links { display: flex; list-style: none; }
+.nav-links li { margin-left: 30px; }
+.nav-links a { color: #555; text-decoration: none; font-weight: 500; transition: 0.3s; }
+.nav-links a:hover { color: var(--primary); }
+
+/* Mobile Menu Button */
+.menu-btn { display: none; font-size: 1.5rem; cursor: pointer; color: var(--dark); }
+
+/* =========================================
+   3. HERO SWEEPER SECTION
+   ========================================= */
+.main-swiper { 
+    height: 80vh; 
+    width: 100%;
+}
+
+.swiper-slide { position: relative; overflow: hidden; }
+
+.swiper-slide img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+/* Darken images for text readability */
+.overlay::after { 
+    content: ''; 
+    position: absolute; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.5); 
+}
+
+.img-overlay { 
+    position: absolute; top: 50%; left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; text-align: center; z-index: 10; width: 80%; 
+}
+
+.img-overlay h2 { 
+    font-size: 3.8rem; 
+    margin: 20px 0; 
+    line-height: 1.2; 
+    text-shadow: 2px 2px 10px rgba(2, 2, 2, 0.5);
+}
+
+/* Add this below your .img-overlay h2 block */
+.img-overlay .lead {
+    color: var(--white) !important; /* Forces it to use your white variable */
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5); /* Optional: makes it easier to read over images */
+    opacity: 1; /* Ensures it isn't slightly transparent */
+}
+
+.primary-btn { 
+    background: var(--primary); color: white; 
+    padding: 14px 35px; border-radius: 8px; 
+    text-decoration: none; display: inline-block; 
+    font-weight: 600; transition: 0.3s; 
+}
+
+.primary-btn:hover { background: var(--dark); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+/* =========================================
+   4. STATS & FEATURES
+   ========================================= */
+.stats-bar { background: var(--dark); color: white; padding: 50px 0; }
+.stats-grid { display: flex; justify-content: space-around; text-align: center; }
+.stat-card h3 { font-size: 2.8rem; color: var(--primary); margin-bottom: 5px; }
+
+.features-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.feature-card { 
+    padding: 40px; text-align: center; background: var(--gray-bg); 
+    border-radius: 15px; transition: 0.3s; border-bottom: 4px solid var(--primary); 
+}
+.feature-card:hover { transform: translateY(-10px); background: white; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
+.feature-card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+
+/* =========================================
+   5. VERTICAL REVIEWS SECTION
+   ========================================= */
+.reviews-section { background: #f1f5f9; padding: 80px 0; }
+.reviews-flex { display: flex; align-items: center; gap: 50px; }
+
+.headings { font-size: 2.5rem; margin-bottom: 20px; color: var(--dark); }
+.headings span { color: var(--primary); }
+
+.reviews-swiper {
+    width: 60%;
+    height: 450px; 
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.review-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--primary);
+    transition: 0.5s ease;
+}
+
+.stars { color: #f39c12; margin-bottom: 10px; font-size: 0.9rem; }
+
+/* =========================================
+   6. DATA TABLE UI
+   ========================================= */
+.table-container { 
+    background: white; border-radius: 15px; 
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05); 
+    overflow-x: auto; margin-top: 30px; 
+}
+
+table { width: 100%; border-collapse: collapse; }
+th { background: #f8f9fa; padding: 18px; text-align: left; border-bottom: 2px solid #eee; font-weight: 600; }
+td { padding: 18px; border-bottom: 1px solid #f0f0f0; }
+
+.filters { display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
+.filters input, .filters select { 
+    padding: 14px; border: 2px solid #eee; border-radius: 10px; 
+    flex: 1; min-width: 200px; outline: none; transition: 0.3s;
+}
+
+.badge { padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; }
+.low { background: #e6f7ec; color: var(--low-color); }
+.moderate { background: #fff9e6; color: var(--mod-color); }
+.high { background: #fdeaea; color: var(--high-color); }
+
+/* =========================================
+   7. TECH STACK & FOOTER (SLIM)
+   ========================================= */
+.tech-stack { display: flex; justify-content: center; gap: 50px; font-size: 3.5rem; color: #cbd5e1; padding: 40px 0; }
+.tech-stack i:hover { color: var(--primary); transform: scale(1.1); transition: 0.3s; }
+
+.footer-slim { background: var(--footer-bg); color: #94a3b8; padding: 40px 0; border-top: 1px solid #334155; }
+.footer-flex { display: flex; justify-content: space-between; align-items: center; }
+.footer-logo h3 { color: white; font-size: 1.5rem; }
+.footer-logo span { color: var(--primary); }
+
+.footer-links { display: flex; list-style: none; }
+.footer-links li { margin: 0 15px; }
+.footer-links a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+.footer-links a:hover { color: var(--primary); }
+
+/* =========================================
+   8. NEW: ABOUT PAGE SPECIFIC STYLES
+   ========================================= */
+.sub-page .page-title {
+    background: linear-gradient(rgba(10, 79, 112, 0.85), rgba(10, 79, 112, 0.95)), 
+                url('https://www.ice.org.uk/media/20qld4sf/clifton-suspension-bridge-hot-air-balloons-shutterstock.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.sub-page .page-title h1 { font-size: 3.5rem; margin-bottom: 10px; }
+
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.about-img img { width: 100%; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+.lead { font-size: 1.15rem; color: #555; line-height: 1.8; }
+
+/* Methodology Cards */
+.method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+.method-card { 
+    background: var(--white); border-radius: 20px; overflow: hidden; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s ease; border: 1px solid #eee; 
+}
+.method-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+.method-image { height: 250px; width: 100%; overflow: hidden; }
+.method-image img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; }
+.method-card:hover .method-image img { transform: scale(1.1); }
+.method-content { padding: 30px; }
+.method-content h3 { color: var(--dark); margin-bottom: 15px; font-size: 1.4rem; position: relative; padding-bottom: 10px; }
+.method-content h3::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: var(--primary); }
+
+/* =========================================
+   9. RESPONSIVE ADJUSTMENTS
+   ========================================= */
+@media (max-width: 900px) {
+    .reviews-flex, .footer-flex, .stats-grid, .about-grid, .method-grid { flex-direction: column; text-align: center; gap: 30px; }
+    .reviews-swiper { width: 100%; }
+    .img-overlay h2 { font-size: 2.5rem; }
+    .menu-btn { display: block; }
+    
+    .nav-links {
+        position: fixed; top: 0; right: -100%; 
+        background: white; height: 100vh; width: 250px;
+        flex-direction: column; padding: 100px 30px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: 0.4s;
+    }
+    .nav-links li { margin: 20px 0; }
+    .nav-links a { color: var(--dark); font-size: 1.2rem; }
+}
+
+/* Modern Form Inputs */
+.form-wrapper input, 
+.form-wrapper textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #334155;
+    transition: 0.3s ease;
+    background: #fff;
+    outline: none;
+}
+
+.form-wrapper input:focus, 
+.form-wrapper textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(32, 149, 174, 0.1);
+}
+
+/* Animations */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer alignment fix */
+.footer-slim {
+    margin-top: auto;
+}
+
+/* =========================================
+   GLOBAL VARIABLES
+   ========================================= */
+:root {
+    --primary: #2095ae;
+    --dark: #0f172a;
+    --sidebar-width: 260px;
+    --text-muted: #64748b;
+    --bg-light: #f8fafc;
+}
+
+/* =========================================
+   BLOG HERO: FLOATING ELEMENTS
+   ========================================= */
+
+.blog-hero-section {
+    position: relative;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: white;
+    padding: 150px 0;
+    margin-left: var(--sidebar-width);
+    overflow: hidden; /* Clips floating elements that drift out of bounds */
+}
+
+.blog-hero-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.blog-hero-text {
+    flex: 1;
+    z-index: 10;
+}
+
+.blog-hero-text h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.blog-hero-text h1 span { color: var(--primary); }
+
+.blog-hero-text p {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+/* Floating Elements Container */
+.floating-container {
+    flex: 1;
+    position: relative;
+    height: 400px;
+}
+
+.floating-el {
+    position: absolute;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.floating-el img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fixed from 'crop' */
+}
+
+.float-icon-box {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.float-icon-box i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.float-icon-box h4 {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Individual Floating Element Positions */
+.el-1 { width: 250px; height: 150px; top: 50px; left: 0; animation: floatVertical 6s ease-in-out infinite; }
+.el-2 { width: 140px; height: 140px; top: 200px; left: 200px; animation: floatHorizontal 8s ease-in-out infinite; animation-delay: 1s; }
+.el-3 { width: 140px; height: 140px; top: -30px; left: 280px; animation: floatVertical 5s ease-in-out infinite; animation-delay: 0.5s; }
+.el-4 { width: 200px; height: 120px; top: 250px; left: -50px; animation: floatHorizontal 7s ease-in-out infinite; }
+
+/* =========================================
+   BLOG HERO SECTION
+   ========================================= */
+.blog-hero-section {
+    width: 100%;
+    background: #1a2533; /* The dark blue from your screenshots */
+    /* 150px top padding ensures text stays below the header */
+    padding: 150px 0 100px 0; 
+    margin-left: 0 !important; /* Force removal of sidebar gap */
+    color: white;
+}
+
+.blog-hero-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+/* =========================================
+   BLOG GRID & CARDS
+   ========================================= */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    /* REMOVED: margin-left: var(--sidebar-width) */
+    margin-left: 0 !important; 
+    padding: 80px 20px;
+    background: var(--bg-light);
+}
+
+.blog-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(32, 149, 174, 0.15);
+}
+
+.blog-img {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.blog-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-img img {
+    transform: scale(1.1);
+}
+
+.blog-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 5;
+}
+
+.blog-content {
+    padding: 25px;
+}
+
+.blog-content small {
+    color: #94a3b8;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.blog-content h3 {
+    color: var(--dark);
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.blog-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.read-more:hover {
+    gap: 15px;
+}
+
+/* =========================================
+   ANIMATIONS & RESPONSIVE
+   ========================================= */
+
+@keyframes floatVertical {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Use this for your floating images in the hero */
+.floating-el {
+    animation: floatVertical 6s ease-in-out infinite;
+}
+
+@media (max-width: 900px) {
+    .blog-hero-section, .blog-grid { 
+        margin-left: 0 !important; 
+        padding: 100px 20px;
+    }
+    .blog-hero-flex { 
+        flex-direction: column; 
+        text-align: center; 
+    }
+    .blog-hero-text h1 { 
+        font-size: 2.5rem; 
+    }
+}
